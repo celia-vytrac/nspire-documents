@@ -1,0 +1,15 @@
+name: CD
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup nspire Tools
+        uses: alexcoder04/setup-nspire-tools@v1
